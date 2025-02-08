@@ -82,19 +82,22 @@ export default function AppFunctional(props) {
 
   function onSubmit(evt) {
     // Use a POST request to send a payload to the server.
-    evt.preventDefault(); // Prevent page reload 
+    evt.preventDefault();
 
     const { x, y } = getXY();
     const payload = { x, y, steps, email };
 
     fetch('http://localhost:9000/api/result', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
     })
-      .then( (response) => response.json() )
-      .then( (data) => setMessage(data.message) ) // Set success/error message
-      .catch( (error) => setMessage(error.message) ); // Handle network errors
+      .then((response) => response.json())
+      .then((data) => {
+      setMessage(data.message); // Set the message from the server
+      setEmail(''); // Reset the email input
+      })
+      .catch((error) => setMessage(error.message));
   }
 
   return (
