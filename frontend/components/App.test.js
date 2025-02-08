@@ -1,4 +1,5 @@
 import React from 'react'; // Import React
+import '@testing-library/jest-dom'; // Add this line
 import { render, screen, fireEvent } from '@testing-library/react';
 import AppFunctional from './AppFunctional';
 
@@ -26,7 +27,7 @@ test('B is in the correct position', () => {
   render(<AppFunctional />);
   const activeSquare = screen.getByText('B');
   expect(activeSquare).toBeInTheDocument();
-  expect(activeSquare.parentElement).toHaveClass('active');
+  expect(activeSquare).toHaveClass('active'); // Check the element itself, not its parent
 });
 
 // Test 4: Check if the reset button works
