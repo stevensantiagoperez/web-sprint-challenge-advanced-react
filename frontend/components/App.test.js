@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import AppFunctional from './AppFunctional';
+import React from 'react';
 
 // Write your tests here
 test('sanity', () => {
