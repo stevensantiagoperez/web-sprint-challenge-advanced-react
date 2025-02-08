@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 /* comment to test first commit*/
 
 // Suggested initial states
-const initialMessage = ''
-const initialEmail = ''
-const initialSteps = 0
-const initialIndex = 4 // the index the "B" is at
+const [index, setIndex] = useState(4); // the index the "B" is at
+const [steps, setSteps] = useState(0); // initial steps are 0
+const [message, setMessage] = useState(''); // no initial message
+const [email, setEmail] = useState(''); // empty email input
+
+
+
+
 
 export default function AppFunctional(props) {
   // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
