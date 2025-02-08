@@ -1,4 +1,5 @@
 import React from 'react'
+/* comment to test first commit*/
 
 // Suggested initial states
 const initialMessage = ''
